@@ -2,6 +2,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
+void pisca (int tempo){
+ gpio_set_level(2,1);
+    vTaskDelay(tempo / portTICK_PERIOD_MS);
+    gpio_set_level(2,0);
+    vTaskDelay(300 / portTICK_PERIOD_MS);
+}
 void S(){
 pisca(222);
    pisca(222);
